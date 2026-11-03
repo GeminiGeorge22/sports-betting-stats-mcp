@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    "GeminiGeorge22"
+  ],
+  "name": "Sports Betting Stats MCP",
+  "description": "Sports betting stats: sportsbook odds, player props, scores, xG, closing lines, horse racing. Hosted remote MCP via Apify plus an open-source stdio proxy.",
+  "category": "Sports"
+}
