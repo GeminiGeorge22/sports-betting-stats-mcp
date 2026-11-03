@@ -1,0 +1,10 @@
+{
+  "publicrecords/sports-odds-api": "Use when you need current pre-match or live prices for a game or league from Kambi-powered books (BetRivers, Unibet, Paf, Svenska Spel, ATG) and want to compare books or find the best price per outcome. Not for DraftKings/FanDuel or historical odds.",
+  "scrapemint/sports-odds-scraper": "Use when you need DraftKings, Pinnacle or Bovada moneyline, spread and total lines for US leagues, UFC or soccer, side by side with the best price per outcome.",
+  "zen-studio/prizepicks-player-props": "Use when the question is about player prop lines (over/under) on PrizePicks for a league, team or player.",
+  "sports-odds-lab/football-odds-results": "Use for soccer odds history, opening and closing lines, results and match stats (xG, shots, corners) going back to 2005, e.g. backtesting or closing-line value.",
+  "hgservices/apify-actor-espn": "Use when you need scores, schedules or final results for NBA, NFL, MLB, NHL, MLS, EPL, NCAA and other leagues, or a team's next game.",
+  "constructive_calm/understat-football-analytics": "Use for expected goals (xG), shot maps, PPDA and player or team season stats in the Big 5 European leagues and RFPL.",
+  "jungle_synthesizer/equibase-us-horse-racing-scraper": "Use for US Thoroughbred race entries and results (horses, jockeys, trainers, morning-line odds, finish order, payouts) for a date and track.",
+  "congism/polymarket-kalshi-arb-finder": "Use when looking for price gaps between matching Polymarket and Kalshi binary markets."
+}
