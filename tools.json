@@ -13,8 +13,8 @@
   "tools": [
     {
       "name": "publicrecords--sports-odds-api",
-      "title": "Sports Odds API: BetRivers, Unibet, Paf, Svenska Spel, ATG",
-      "description": "Sports Odds API: BetRivers, Unibet, Paf, Svenska Spel, ATG. Live odds from 24 Kambi-powered sportsbooks in one call: BetRivers (12 US states + Ontario), Unibet (7 countries), Paf, Svenska Spel and ATG. One row per game with every book's price and the best price per outcome.\n\nWhen to use: Use when you need current pre-match or live prices for a game or league from Kambi-powered books (BetRivers, Unibet, Paf, Svenska Spel, ATG) and want to compare books or find the best price per outcome. Not for DraftKings/FanDuel or historical odds.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"publicrecords/sports-odds-api\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/publicrecords/sports-odds-api",
+      "title": "Sports Betting Odds API: BetRivers, Unibet, Paf, Svenska Spel",
+      "description": "Sports Betting Odds API: BetRivers, Unibet, Paf, Svenska Spel. Sports betting odds API: live and pre-game odds from BetRivers (12 US states + Ontario), Unibet (7 countries), Paf, Svenska Spel and ATG in one call. One row per game with every book's price and the best price per outcome. No API key.\n\nWhen to use: Use when you need current pre-match or live prices for a game or league from Kambi-powered books (BetRivers, Unibet, Paf, Svenska Spel, ATG) and want to compare books or find the best price per outcome. Not for DraftKings/FanDuel or historical odds.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"publicrecords/sports-odds-api\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/publicrecords/sports-odds-api",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -127,7 +127,7 @@
         }
       },
       "annotations": {
-        "title": "Sports Odds API: BetRivers, Unibet, Paf, Svenska Spel, ATG",
+        "title": "Sports Betting Odds API: BetRivers, Unibet, Paf, Svenska Spel",
         "readOnlyHint": true,
         "destructiveHint": false,
         "idempotentHint": false,
@@ -335,7 +335,7 @@
     {
       "name": "zen-studio--prizepicks-player-props",
       "title": "PrizePicks Player Props Scraper - Real-Time Lines",
-      "description": "PrizePicks Player Props Scraper - Real-Time Lines. Extract real-time player prop lines from PrizePicks across 29 leagues. Get over/under lines, odds tiers, player stats, team matchups, and game schedules. NBA, MLB, NHL, Soccer, Tennis, and esports. Filter by league or player name. 51 fields per prop. JSON, CSV, Excel export.\n\nWhen to use: Use when the question is about player prop lines (over/under) on PrizePicks for a league, team or player.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"zen-studio/prizepicks-player-props\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/zen-studio/prizepicks-player-props",
+      "description": "PrizePicks Player Props Scraper - Real-Time Lines. Extract real-time player prop lines from PrizePicks across 45 leagues. Get over/under lines, odds tiers, player stats, team matchups, and game schedules. NBA, WNBA, NFL, MLB, NHL, Soccer, Tennis, and esports. Filter by league or player name. 77 fields per prop. JSON, CSV, Excel export.\n\nWhen to use: Use when the question is about player prop lines (over/under) on PrizePicks for a league, team or player.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"zen-studio/prizepicks-player-props\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/zen-studio/prizepicks-player-props",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -381,6 +381,7 @@
                 "NHLSZN",
                 "MLBLIVE",
                 "NBA 1st Quarter",
+                "NBA1H",
                 "WNBA1Q",
                 "WNBA1H",
                 "NHL 1st Period",
@@ -413,7 +414,7 @@
           },
           "statTypes": {
             "title": "Stat Types",
-            "description": "Comma-separated stat types, case-insensitive. Accepts full names or abbreviations. Example: Points, PRA, Rebounds, Goals, SOT . Stat types are league-specific — see README for the full list grouped by sport. Leave empty to get all stats.",
+            "description": "Comma-separated stat types, case-insensitive. A name must equal a prop's full stat name or its short name exactly, so PRA and Pts+Rebs+Asts both work but a near miss such as Blocks for Blocked Shots matches nothing. Common NBA names: Points, Rebounds, Assists, PRA, Pts+Rebs, Pts+Asts, Rebs+Asts, 3PTM, Steals, Blocked Shots, Blks+Stls, Turnovers, Fantasy Score . Names differ by league and change during the season: the README section Stat Types by League lists them, and a run without this filter…",
             "type": "string"
           },
           "oddsTiers": {
@@ -1004,7 +1005,7 @@
     {
       "name": "jungle_synthesizer--equibase-us-horse-racing-scraper",
       "title": "Equibase Horse Racing Scraper - US Race Entries & Results",
-      "description": "Equibase Horse Racing Scraper - US Race Entries & Results. Scrape US Thoroughbred horse racing data from Equibase.com — the official source for North American racing. Extract race entries (horses, jockeys, trainers, odds) and results (finish order, times, payouts) for any date and track. Ideal for handicappers and sports analytics.\n\nWhen to use: Use for US Thoroughbred race entries and results (horses, jockeys, trainers, morning-line odds, finish order, payouts) for a date and track.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"jungle_synthesizer/equibase-us-horse-racing-scraper\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/jungle_synthesizer/equibase-us-horse-racing-scraper",
+      "description": "Equibase Horse Racing Scraper - US Race Entries & Results. Horse racing odds scraper and US Thoroughbred horse racing data from Equibase.com, the official source for North American racing. Extract race entries (horses, jockeys, trainers, odds) and results (finish order, times, payouts) for any date and track. For handicappers and sports analytics.\n\nWhen to use: Use for US Thoroughbred race entries and results (horses, jockeys, trainers, morning-line odds, finish order, payouts) for a date and track.\n\nReturns: the run's dataset rows as structured JSON (one row per result), plus the run and dataset IDs for paging the full dataset.\n\nBehavior: starts one run of the Apify Actor \"jungle_synthesizer/equibase-us-horse-racing-scraper\" through Apify's hosted MCP gateway (mcp.apify.com) with your own APIFY_TOKEN; the run uses your Apify account. Read-only: it only reads public web data and changes nothing on the source site. Docs: https://apify.com/jungle_synthesizer/equibase-us-horse-racing-scraper",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -1019,13 +1020,23 @@
             "type": "string"
           },
           "sp_contact": {
-            "title": "Contact email (optional)",
+            "title": "Contact Email",
             "description": "We'll personally help with your use case. No spam. Example: \"Share your email here...\"",
             "type": "string"
           },
           "raceDate": {
             "title": "Race Date",
-            "description": "Date to scrape in MM/DD/YYYY format. Defaults to today. Use a recent past date to get completed results. Example: \"\"",
+            "description": "Date to scrape, MM/DD/YYYY or YYYY-MM-DD. Defaults to today. Race cards (entries) cover the last 10 days; completed results go back further, reliably about 45 days. Ignored when Date From or Date To is set. Example: \"\"",
+            "type": "string"
+          },
+          "dateFrom": {
+            "title": "Date From",
+            "description": "First day of a range, MM/DD/YYYY or YYYY-MM-DD. Returns every race day from here through Date To (or through today when Date To is empty) in one run. Days with no racing are skipped. Max Items caps the run; if it stops early the run says which date to continue from. Entries, late changes and Entries + Results only reach back 10 days. Example: \"\"",
+            "type": "string"
+          },
+          "dateTo": {
+            "title": "Date To",
+            "description": "Last day of the range, MM/DD/YYYY or YYYY-MM-DD. With Date From empty, this is a single day. Example: \"\"",
             "type": "string"
           },
           "trackCodes": {
@@ -1057,6 +1068,14 @@
           "raceTypes": {
             "title": "Race types",
             "description": "Optional race-type filter, matched as case-insensitive text against each race's type. Example: claiming keeps Claiming, Maiden Claiming, Optional Claiming and Starter Optional Claiming races; maiden keeps every Maiden race. Leave empty for all race types. Not used in late_changes mode. Example: []",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "surfaces": {
+            "title": "Surfaces",
+            "description": "Optional track-surface filter, matched as case-insensitive text against each race's surface. Example: turf keeps turf races (including inner and downhill turf); dirt keeps dirt races; synthetic keeps synthetic-surface races. Leave empty for all surfaces. Not used in late_changes mode. Example: []",
             "type": "array",
             "items": {
               "type": "string"
